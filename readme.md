@@ -28,7 +28,8 @@ truffle.cmd compile
 # 배포
 truffle.cmd migrate --reset --network binanceTestnet
 
-'''
+```
+
 Starting migrations...
 ======================
 > Network name:    'binanceTestnet'
@@ -88,4 +89,5 @@ Summary
 =======
 > Total deployments:   2
 > Final cost:          0.0073015 ETH
-'''
+
+```
