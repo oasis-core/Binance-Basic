@@ -1,3 +1,8 @@
+require('dotenv').config();
+// yhpark.
+// .env 파일을 만들고, 파일에 MY_PRIVATE_KEY=0x.... 개인키를 입력해놓는다.
+// .gitignore 에서 .env 파일을 걸어놓아서 공개되는 것을 막음.
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -18,7 +23,14 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+// yhpark. BSC Test net
+// Testnet(ChainID 0x61, 97 in decimal)
+const HDWalletProvider = require('@truffle/hdwallet-provider'); 
+const provider = new HDWalletProvider({
+  privateKeys: [process.env.MY_PRIVATE_KEY],
+  providerOrUrl: 'https://data-seed-prebsc-2-s3.binance.org:8545/'
+});
+
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
@@ -36,6 +48,12 @@ module.exports = {
    */
 
   networks: {
+    binanceTestnet: {
+      provider: () => provider,
+      network_id: "97",
+      gas: 1000000
+    }
+
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
@@ -82,7 +100,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
