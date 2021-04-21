@@ -1,9 +1,9 @@
 pragma solidity ^0.8;
 
 contract MyContract {
-  uint public data;
+  string public data;
 
-  function setDate(uint _data) external {
+  function setDate(string memory _data) external {
     data = _data;
   }
 }

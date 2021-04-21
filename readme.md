@@ -25,14 +25,23 @@ MyContract.sol
 # 컴파일
 truffle.cmd compile
 
-# 배포
+# 배포()
 truffle.cmd migrate --reset --network binanceTestnet
 
+# 수정 후 재배포하였음
+자료형을 uint 에서 string으로 변경하여 재배포함.
+
 ```
+Compiling your contracts...
+===========================
+√ Fetching solc version list from solc-bin. Attempt #1
+> Everything is up to date, there is nothing to compile.
+
+
 
 Starting migrations...
 ======================
-> Network name:    'binanceTestnet'
+> Network name:    'binanceTestnet'    
 > Network id:      97
 > Block gas limit: 30000000 (0x1c9c380)
 
@@ -40,15 +49,15 @@ Starting migrations...
 1_initial_migration.js
 ======================
 
-   Deploying 'Migrations'
+   Replacing 'Migrations'
    ----------------------
-   > transaction hash:    0x6b62b3d7f7633ca163b09b7d821eda3a40dfa47787e3fadfc16b361eadcb3ae5
+   > transaction hash:    0xb175a40ba3a7f9c547c7236378b2df545cacc5be5083c5aac197f5b32070aaee
    > Blocks: 3            Seconds: 9
-   > contract address:    0x94E63dE74f32b739BE129D866B0B21e5B514a772
-   > block number:        8139387
-   > block timestamp:     1618908334
+   > contract address:    0xDFEbc73F91Ca6bE677e8f5361b205746AE415825
+   > block number:        8160127
+   > block timestamp:     1618970554
    > account:             0x85Cc4aA3c32Bde305CD9C5dd3d2a4d40A5C39efF
-   > balance:             0.99506192
+   > balance:             0.97399712
    > gas used:            246904 (0x3c478)
    > gas price:           20 gwei
    > value sent:          0 ETH
@@ -64,30 +73,30 @@ Starting migrations...
 2_deploy_contracts.js
 =====================
 
-   Deploying 'MyContract'
+   Replacing 'MyContract'
    ----------------------
-   > transaction hash:    0x4bd26a67d31ee0a33f5d5c9584dc75af498c030f23804b29d9ecacbacde39583
+   > transaction hash:    0xf3c5bc6f841ed393e7cd148760f6528cafbcd32e85d7979451a2e9ae6029f8fc
    > Blocks: 3            Seconds: 9
-   > contract address:    0x7908e8b9B4D524996e52ECc1e5eb39256075c7bE
-   > block number:        8139395
-   > block timestamp:     1618908358
+   > contract address:    0xFF01FD7aE2607dbeD12b502429969c9Adb9a0954
+   > block number:        8160135
+   > block timestamp:     1618970578
    > account:             0x85Cc4aA3c32Bde305CD9C5dd3d2a4d40A5C39efF
-   > balance:             0.99184824
-   > gas used:            118171 (0x1cd9b)
+   > balance:             0.96712268
+   > gas used:            301209 (0x49899)
    > gas price:           20 gwei
    > value sent:          0 ETH
-   > total cost:          0.00236342 ETH
+   > total cost:          0.00602418 ETH
 
 
    > Saving migration to chain.
    > Saving artifacts
    -------------------------------------
-   > Total cost:          0.00236342 ETH
+   > Total cost:          0.00602418 ETH
 
 
 Summary
 =======
 > Total deployments:   2
-> Final cost:          0.0073015 ETH
+> Final cost:          0.01096226 ETH
 
 ```
